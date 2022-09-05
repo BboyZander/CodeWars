@@ -1,0 +1,14 @@
+import time
+ 
+def generate_hashtag( s ):
+    res = '#' + ''.join(i.title() for i in s.strip().split(' '))
+    if len(res) > 140 or res == '#':
+        return False
+    else:
+        return res
+
+if __name__ == '__main__':
+    start_time = time.time()
+    
+    print(generate_hashtag('c i n'))
+    print("--- %s seconds ---" % (time.time() - start_time))

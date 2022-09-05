@@ -1,0 +1,13 @@
+import time
+ 
+def first_non_repeating_letter( s ):
+    try:
+        return [v for v in s if s.lower().count(v.lower()) == 1][0]
+    except Exception:
+        return ''
+
+if __name__ == '__main__':
+    start_time = time.time()
+    
+    print(first_non_repeating_letter('sTreSS'))
+    print("--- %s seconds ---" % (time.time() - start_time))

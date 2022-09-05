@@ -1,0 +1,16 @@
+import time
+import re
+ 
+def camel_case_split(str):
+     
+    start_idx = [i for i, e in enumerate(str)
+                 if e.isupper()] + [len(str)]
+ 
+    start_idx = [0] + start_idx
+    return ' '.join([str[x: y] for x, y in zip(start_idx, start_idx[1:])])
+
+if __name__ == '__main__':
+    start_time = time.time()
+    
+    print(camel_case_split(''))
+    print("--- %s seconds ---" % (time.time() - start_time))
