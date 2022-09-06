@@ -1,0 +1,46 @@
+import time
+ 
+# def max_sequence( arr ):
+#     if len(arr) == 0 or sum(arr) < 0:
+#         return 0 
+#     else:
+#         res = 0
+#         flag = False
+#         while not flag:
+#             for slice in range
+
+def max_sequence(arr):
+    if len(arr) == 0:
+        return 0 
+    else:
+        cnt_neg = 0
+        for i in arr:
+            if i < 0: 
+                cnt_neg += 1
+        if cnt_neg == len(arr):
+            return 0
+        else:
+            try:
+                size = len(arr)
+
+                max_till_now = arr[0]
+                max_ending = 0
+
+                for i in range(0, size):
+                    max_ending = max_ending + arr[i]
+                    if max_ending < 0:
+                        max_ending = 0
+
+
+                    elif (max_till_now < max_ending):
+                        max_till_now = max_ending
+
+                return max_till_now
+            except Exception:
+                return 0
+
+if __name__ == '__main__':
+    start_time = time.time()
+    
+    print(max_sequence([]))
+    print("--- %s seconds ---" % (time.time() - start_time))
